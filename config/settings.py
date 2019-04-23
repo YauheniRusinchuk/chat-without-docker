@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'src.models.room',
+    'src.models.message',
     'channels',
 ]
 
