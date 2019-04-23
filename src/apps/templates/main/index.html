@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'list_room.html' %}
+
+
+    <div class="main_container">
+
+        <img src="{% static './assets/anonymous-logo.png' %}" />
+
+        {% if user.is_authenticated %}
+            {% include 'logout.html' %}
+            <h3 class='is_user'>Hi, <span>{{user.username}}.</span> How are you ?</h3>
+            <p class='text-p'> Find a chat in which you are waiting or create and call friends. </p>
+
+            <div class="search_room">
+                <form>
+                    <input type="text" name="" placeholder="Search room ..." value="">
+                </form>
+            </div>
+
+            <div class="create_room">
+                <a href="{% url 'main:room:create_new_room' %}">create room</a>
+            </div>
+
+        {% else %}
+            <h3 id='user_is_not'></h3>
+            <div class="login_or_register">
+                <a href="{% url 'login' %}">login</a>
+                <a href="{% url 'create:create_account' %}">register</a>
+            </div>
+        {% endif %}
+
+    </div>
+<script src="{% static './js/text.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,434 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mina', sans-serif;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+
+.main_container {
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+
+.main_container #user_is_not {
+    color: grey;
+}
+
+.main_container .is_user {
+    color: grey;
+    font-size: 12px;
+}
+
+.main_container .is_user span {
+    font-size: 24px;
+    color: #292828;
+}
+
+.main_container .text-p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.search_room {
+    margin-top: 20px;
+}
+
+.search_room form input {
+    width: 300px;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    padding: 3px 10px;
+    outline: none;
+    font-size: 12px;
+}
+
+
+
+
+
+.login_or_register {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.login_or_register a {
+    text-decoration: none;
+    color: #292828;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    padding: 3px 20px;
+    background-color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+}
+
+.login_or_register a:hover {
+    background-color: #292828;
+    color: white;
+}
+
+.logout_container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.logout_container a {
+    border: 2px solid #292828;
+    padding: 3px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    outline: none;
+    color: #292828;
+    background-color: white;
+    transition-property: background-color color;
+    transition-duration: 0.3s;
+}
+
+.logout_container a:hover {
+    background-color: #292828;
+    color: white;
+}
+
+.create_room {
+    margin-top: 50px;
+}
+
+.create_room a {
+    font-size: 12px;
+    color: white;
+    border: 2px solid #292828;
+    background-color: #292828;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 3px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.login_form {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login_form form input {
+    width: 200px;
+    margin: 10px;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    background-color: white;
+    padding: 3px 10px;
+    font-size: 12px;
+    outline: none;
+}
+
+
+.login_form form button {
+    padding: 3px 20px;
+    background-color: #292828;
+    color: white;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.register_container {
+    width: 50%;
+    margin: 50px auto;
+}
+
+
+.register_container form input {
+    border: 2px solid #292828;
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 12px;
+    outline: none;
+}
+
+.register_container form button {
+    border: 2px solid #292828;
+    border-radius: 3px;
+    background-color: #292828;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    padding: 3px 20px;
+    cursor: pointer;
+}
+
+.not_auth_container {
+    text-align: center;
+}
+
+
+.not_auth_container .not_auth {
+    font-weight: bold;
+    color: #292828;
+}
+
+
+.list_room {
+    width: 40%;
+    margin-top: 50px;
+    margin-left: 600px;
+    padding: 10px;
+}
+
+
+.list_room  .create_user {
+    font-weight: bold;
+    font-size: 12px;
+    color: #292828;
+}
+
+.view_room_in_main {
+    /* border: 2px solid #292828; */
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.tick_mark {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+
+
+
+.list_room .create_user a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #46b7e8;
+}
+
+.list_room .count_participants_title {
+    font-size: 10px;
+    color: grey;
+}
+
+
+.count_participants {
+    font-size: 10px;
+    color: #46b7e8;
+    font-weight: bold;
+}
+
+
+.form_create {
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.form_create form input {
+    width: 200px;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px 10px;
+    margin: 10px;
+}
+
+.form_create form button {
+    border: 2px solid #292828;
+    background-color: #292828;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 3px 20px;
+    cursor: pointer;
+}
+
+.room_detail {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+
+.room_detail h3 {
+    color: grey;
+    font-size: 12px;
+}
+
+.room_detail .hi {
+    color: #46b7e8;
+    font-size: 16px;
+}
+
+.room_detail .name_room {
+    color: #46b7e8;
+    font-size: 16px;
+}
+
+
+.room_detail p {
+    font-weight: bold;
+    color: #292828;
+}
+
+.room_detail p .creator {
+    color: #46b7e8;
+    font-size: 14px;
+}
+
+.check_password {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.check_password form input {
+    border: 2px solid #292828;
+    border-radius: 3px;
+    padding: 3px 10px;
+    outline: none;
+}
+
+.check_password form button {
+    border: 2px solid #292828;
+    background-color: #292828;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+    padding: 3px 20px;
+    font-weight: bold;
+}
+
+
+
+.delete_container {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.detele_container button {
+    border: 2px solid #292828;
+    border-radius: 3px;
+    background-color: white;
+    color: #292828;
+}
+
+
+.btn_delete {
+    font-size: 12px;
+    font-weight: bold;
+    color: #292828;
+    text-decoration: none;
+    border: 2px solid #292828;
+    padding: 3px 10px;
+    font-size: 10px;
+    border-radius: 3px;
+}
+
+.chat_container {
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    /* background-color: #f7f7f7; */
+    padding: 10px;
+}
+
+.chat_container .chat_logs {
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    /* background-color: #fbfbfb; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chat_container .chat_logs::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat_container .chat_logs::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: grey;
+}
+
+
+.chat_logs .chat {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.chat .chat_user_info {
+    font-size: 12px;
+    font-weight: bold;
+    color: #46b7e8;
+}
+
+.chat .chat_message {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    /* background-color: #f7f7f7; */
+    border-radius: 10px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 5px grey;
+}
+
+
+.chat_form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.chat_form input {
+    width: 80%;
+    border: 2px solid #292828;
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-right: 20px;
+    font-size: 12px;
+}
+
+.chat_form button {
+    border: 2px solid #292828;
+    border-radius: 3px;
+    background-color: #292828;
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

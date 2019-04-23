@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="form_create">
+    <h2> Hi, {{user.username}}. Create your own room and chat. </h2>
+    <form method="post">{% csrf_token %}
+        {{form.as_p}}
+    <button type='submit'>create</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load static %}
+<div class="list_room">
+
+    {% if user.is_authenticated %}
+
+    {% for ob in object_list %}
+        <div class='view_room_in_main'>
+            {% if user in ob.participants.all or user == ob.founder %}
+                <img class='tick_mark' src="{% static './assets/tick.png' %}" />
+            {% endif %}
+            <p class='create_user'>create by: {{ob.founder.username}} <a href="{{ob.get_absolute_url}}">{{ob.name}}</a> at : <span>{{ob.create_date}}</span></p>
+            <p class='count_participants_title'> users in room : <span class='count_participants'>{{ob.participants.count}}</span></p>
+        </div>
+
+    {% endfor %}
+    {% else %}
+        <div class='not_auth_container'>
+            <p class='not_auth'>You must be logged in to see the list of rooms.</p>
+            <img src="{% static './assets/sad.png' %}" />
+        </div>
+    {% endif %}
+
+</div>

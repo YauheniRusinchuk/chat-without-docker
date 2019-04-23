@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% if user == room.founder %}
+        <a class='btn_delete' href="{{room.get_delete_room}}">delete</a>
+    {% endif %}
+    <div class="room_detail">
+        <h3>Hi, <span class='hi'>{{user.username}}</span>. You went into a room called <span class='name_room'>{{room.name}}</span></h3>
+        <p>creator this room : <span class='creator'>{{room.founder.username}}</span></p>
+    </div>
+
+
+    <div class="chat_container">
+        <div class="chat_logs">
+            <div class="chat">
+                <div class="chat_user_info">eugene</div>
+                <p class='chat_message'>ahhadhahdhadjajdjahd</p>
+            </div>
+            <div class="chat">
+                <div class="chat_user_info">ROT EBAL </div>
+                <p class='chat_message'>ahhadhahdhadjajdjahd dhabdjadh hadhakdhkahdkha</p>
+            </div>
+            <div class="chat">
+                <div class="chat_user_info">ROT EBAL </div>
+                <p class='chat_message'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div class="chat_form">
+            <form id='form_comment'>
+                <input class='msg_form' type="text" name="" placeholder="Text ..." value="">
+                <button type="subit" name="button">NEW</button>
+            </form>
+        </div>
+
+
+    </div>
+
+
+<script type="text/javascript">
+
+
+    let loc = window.location;
+    let wsStart = 'ws://';
+    if(loc.protocol == 'https:') {
+        wsStart = 'wss://';
+    }
+    let endPoint = wsStart + loc.host + loc.pathname
+    let wsMsg = new WebSocket(endPoint);
+    wsMsg.onopen = function(e) {
+        console.log("OpenMSG", e)
+    }
+
+
+
+    $('#form_comment').on('submit', (e)=> {
+        e.preventDefault();
+        let text = $('.msg_form').val();
+        let data = {
+             'message': text
+        }
+        wsMsg.send(JSON.stringify(data))
+        $('#form_comment')[0].reset();
+        })
+
+
+
+
+</script>
+
+
+
+
+
+{% endblock %}
