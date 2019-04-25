@@ -334,13 +334,20 @@ input {
 .delete_container {
     width: 50%;
     margin: 50px auto;
+    text-align: center;
 }
 
-.detele_container button {
+.delete_container form p {
+    font-weight: bold;
+}
+
+.delete_container form input {
     border: 2px solid #292828;
     border-radius: 3px;
     background-color: white;
     color: #292828;
+    padding: 3px 10px;
+    font-weight: bold;
 }
 
 
@@ -402,8 +409,7 @@ input {
     /* background-color: #f7f7f7; */
     border-radius: 10px;
     font-size: 14px;
-    border: 1px solid #e6e6e6;
-    box-shadow: 0 0 5px grey;
+
 }
 
 
