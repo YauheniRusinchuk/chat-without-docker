@@ -62,11 +62,13 @@
     $('#form_comment').on('submit', (e)=> {
         e.preventDefault();
         let text = $('.msg_form').val();
-        let data = {
-             'message': text
+        if(text) {
+            let data = {
+                'message': text
+            }
+            wsMsg.send(JSON.stringify(data))
+            $('#form_comment')[0].reset();    
         }
-        wsMsg.send(JSON.stringify(data))
-        $('#form_comment')[0].reset();
     })
 
 

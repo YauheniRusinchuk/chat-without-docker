@@ -32,9 +32,9 @@ class CommentCunsumer(AsyncConsumer):
                 'message': message,
                 'username': user.username,
             }
-        await self.create_comment(user, message)
-        await self.channel_layer.group_send(
-                self.pk_room,
+            await self.create_comment(user, message)
+            await self.channel_layer.group_send(
+                    self.pk_room,
                 {
                     "type": "msg_comment",
                     "text": json.dumps(response),
