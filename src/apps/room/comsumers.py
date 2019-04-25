@@ -20,10 +20,9 @@ class CommentCunsumer(AsyncConsumer):
         await self.send({
             "type": "websocket.accept",
         })
-        print("SOCKET MSG ...")
+
 
     async def websocket_receive(self, event):
-        print('receive ...', event)
         text_comment = event.get('text', None)
         if text_comment is not None:
             load_data   = json.loads(text_comment)
@@ -44,7 +43,6 @@ class CommentCunsumer(AsyncConsumer):
 
 
     async def msg_comment(self, event):
-        #print('message', event)
         await self.send({
             "type": "websocket.send",
             "text": event["text"]
