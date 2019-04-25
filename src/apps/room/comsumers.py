@@ -58,4 +58,7 @@ class CommentCunsumer(AsyncConsumer):
 
 
     async def websocket_disconnect(self, event):
-        print("disconnect")
+        await self.channel_layer.group_discard(
+            self.pk_room,
+            self.channel_name
+        )
