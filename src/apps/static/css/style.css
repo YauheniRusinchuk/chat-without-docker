@@ -365,7 +365,8 @@ input {
 .chat_container {
     width: 600px;
     height: 400px;
-    margin: 20px;
+    position: fixed;
+    left: 10px;
     /* background-color: #f7f7f7; */
     padding: 10px;
     border-radius: 3px;
@@ -441,4 +442,13 @@ input {
     padding: 3px 10px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+
+.list_users_in_room {
+    position: absolute;
+    right: 50px;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
 }

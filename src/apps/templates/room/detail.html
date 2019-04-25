@@ -28,7 +28,14 @@
             </form>
         </div>
 
+    </div>
 
+
+    <div class="list_users_in_room">
+        <h4>Users in this room</h4>
+        {% for user in room.participants.all %}
+            <p>{{user.username}}</p>
+        {% endfor %}
     </div>
 
 
@@ -67,7 +74,7 @@
                 'message': text
             }
             wsMsg.send(JSON.stringify(data))
-            $('#form_comment')[0].reset();    
+            $('#form_comment')[0].reset();
         }
     })
 
