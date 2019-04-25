@@ -42,9 +42,20 @@
     }
     let endPoint = wsStart + loc.host + loc.pathname
     let wsMsg = new WebSocket(endPoint);
-    wsMsg.onopen = function(e) {
-        console.log("OpenMSG", e)
+    wsMsg.onopen = function(e) {console.log("OpenMSG", e)}
+
+
+    wsMsg.onmessage = function(e) {
+        console.log("Message", e)
+        let data = JSON.parse(e.data)
+        $('.chat_logs')
+            .append(`<div class="chat">
+                    <div class="chat_user_info">${data['username']}</div>
+                    <p class='chat_message'>${data['message']}</p>
+                    </div>`);
+
     }
+
 
 
 
